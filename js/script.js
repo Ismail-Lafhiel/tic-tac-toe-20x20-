@@ -108,11 +108,11 @@ const updateScoreboard = () => {
 document.getElementById('reset-btn').addEventListener('click', resetGame);
 document.getElementById('undo-btn').addEventListener('click', undoLastMove);
 
-// Initialize the game
+// Initializing the game
 const initializeGame = () => {
     createGrid(gridSize);
     updateScoreboard();
 };
 
-// Start the game
+// Starting the game
 initializeGame();
