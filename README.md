@@ -22,7 +22,7 @@ let board = Array(gridSize * gridSize).fill(null);
 #### English Explanation:
 
 - `currentPlayer`: Initializes the game with player 'X' as the starting player.
-- gridSize: Defines the size of the grid as 20x20.
+- `gridSize`: Defines the size of the grid as 20x20.
 - `moveHistory`: Keeps a history of all moves made, which is useful for implementing the undo functionality.
 - `score`: Tracks the score of both players ('X' and 'O').
 - `board`: Represents the game board as a flat array, where each cell corresponds to an index in this array.
