@@ -123,6 +123,35 @@ const checkWin = () => {
     }
     return false;
 };
+
+// Function to check a specific direction for five in a row
+const checkDirection = (index, step) => {
+  let count = 1;
+  const currentRow = Math.floor(index / gridSize);
+  const currentCol = index % gridSize;
+  for (let i = 1; i < 5; i++) {
+    const nextIndex = index + step * i;
+    const nextRow = Math.floor(nextIndex / gridSize);
+    const nextCol = nextIndex % gridSize;
+
+    if (
+      nextIndex >= board.length ||
+      (step === 1 && nextRow !== currentRow) || // Horizontal wrap
+      (step === gridSize + 1 && nextCol <= currentCol) || // Diagonal wrap (bottom-right)
+      (step === gridSize - 1 && nextCol >= currentCol) // Diagonal wrap (bottom-left)
+    ) {
+      break;
+    }
+
+    if (board[nextIndex] === board[index]) {
+      count++;
+    } else {
+      break;
+    }
+  }
+
+  return count === 5;
+};
 ```
 
 #### English Explanation:
